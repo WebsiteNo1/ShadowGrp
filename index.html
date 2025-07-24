@@ -86,16 +86,12 @@
         <button id="nextBtn" class="hidden mt-6 bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700">Next</button>
     </div>
     <div id="options" class="hidden flex flex-col items-center justify-center h-screen space-y-4">
-        <div class="option-box bg-gray-800 text-white p-6 rounded-3xl w-80 text-center transform translate-x-[-1000px] cursor-pointer" onclick="showLink(1)">
+        <div class="option-box bg-white-800 text-white p-6 rounded-3xl w-80 text-center transform translate-x-[-1000px] cursor-pointer" onclick="showLink(1)">
             <h2 class="text-2xl font-semibold">SHADOW LIMITED 6V6</h2>
         </div>
-        <div class="option-box bg-gray-800 text-white p-6 rounded-3xl w-80 text-center transform translate-x-[-1000px] cursor-pointer" onclick="showLink(2)">
+        <div class="option-box bg-white-800 text-white p-6 rounded-3xl w-80 text-center transform translate-x-[-1000px] cursor-pointer" onclick="showLink(2)">
             <h2 class="text-2xl font-semibold">SHADOW UNLIMITED 6V6</h2>
         </div>
-        <div class="option-box bg-gray-800 text-white p-6 rounded-3xl w-80 text-center transform translate-x-[-1000px] cursor-pointer" onclick="showLink(3)">
-            <h2 class="text-2xl font-semibold">SHADOW LW</h2>
-        </div>
-    </div>
     <div id="linkSection" class="hidden flex items-center justify-center h-screen">
         <div class="text-center">
             <p id="linkText" class="text-2xl text-white mb-4"></p>
@@ -177,7 +173,6 @@
             const links = {
                 1: { url: 'https://chat.whatsapp.com/IJHIPCKfT0IBWxKKtYIXbU?mode=r_t', text: 'Join SHADOW LIMITED 6V6' },
                 2: { url: 'https://chat.whatsapp.com/CyThzHzQSF33oleHVKRj0D?mode=r_t', text: 'Join SHADOW UNLIMITED 6V6' },
-                3: { url: 'https://chat.whatsapp.com/HmNU66a5yafJnnZ54pvZ7O?mode=r_t', text: 'Join SHADOW LW' }
             };
 
             linkText.textContent = links[option].text;
