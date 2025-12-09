@@ -1,0 +1,160 @@
+/* --- GENERAL SETUP & FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background: #000;
+    color: #fff;
+}
+.hidden { display: none !important; }
+.screen {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- BACKGROUND (THE SWORD AESTHETIC) --- */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Background Image Path: 'assets/background.jpg' */
+    background-image: url('assets/background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: darken;
+    z-index: -2;
+    filter: brightness(0.7) contrast(1.2);
+    transition: filter 0.5s ease;
+}
+
+/* --- TITLE AND BUTTONS --- */
+.shadow-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 7rem;
+    color: #ff0044; /* Blood Red Glow */
+    text-shadow: 0 0 15px rgba(255, 0, 68, 0.8), 0 0 25px rgba(255, 0, 68, 0.6);
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+}
+.action-btn {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#nextBtn {
+    background-color: #8a2be2; /* Violet */
+    color: #fff;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+}
+#nextBtn:hover { background-color: #6a0dad; transform: scale(1.05); }
+
+/* --- HERO IMAGE & BASS VIBRATE EFFECT --- */
+.hero-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 5px solid #ff0044; /* Red Border */
+    box-shadow: 0 0 20px rgba(255, 0, 68, 0.7);
+    position: relative;
+    z-index: 5;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Base Vibration/Pulse Effect */
+.vibration-circle {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    pointer-events: none;
+}
+/* Vibration Animation (Base high hone par JS se add hoga) */
+.vibrating .vibration-circle {
+    /* Sun Rays effect ke liye box shadow ka use */
+    animation: bass-pulse 0.3s infinite alternate;
+}
+@keyframes bass-pulse {
+    0% { box-shadow: 0 0 0 0px rgba(255, 0, 68, 0.7), 0 0 0 10px rgba(255, 0, 68, 0.4); }
+    100% { box-shadow: 0 0 0 5px rgba(255, 0, 68, 1), 0 0 30px 15px rgba(255, 0, 68, 0); }
+}
+
+/* --- OPTION BOXES & UNIQUE SLIDE-IN --- */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    z-index: 10;
+}
+.option-box {
+    background: rgba(10, 10, 10, 0.9);
+    border: 2px solid #ff0044;
+    padding: 25px 40px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 68, 0.5);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.27); /* Thoda Bounce effect */
+}
+.option-box h2 { font-size: 1.8rem; margin: 0; color: #fff; font-family: 'Teko', sans-serif; }
+.option-box p { font-size: 0.9rem; margin-top: 5px; color: #ccc; }
+.option-box:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 0, 68, 1); border-color: #ff88a8; }
+
+/* Initial Positions (Screen ke bahar) */
+.translate-start { position: relative; }
+.from-top { transform: translateY(-200vh); } /* Top se neeche aayega */
+.from-left { transform: translateX(-200vw); } /* Left se daayein aayega */
+.from-right { transform: translateX(200vw); } /* Right se baayein aayega */
+
+/* Final Position (Slide-in hone ke baad) */
+.slide-in { 
+    transform: translate(0) !important;
+}
+
+/* --- MUSIC TOGGLE & LINK SECTION (Same as before) --- */
+.music-toggle {
+    position: fixed; top: 15px; right: 15px; z-index: 100;
+    background: rgba(0,0,0,0.6); color: #fff; border: 1px solid #ff0044;
+    padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 14px;
+    transition: background 0.3s;
+}
+/* ... (Link section styles yahan aayenge) ... */
+
+
